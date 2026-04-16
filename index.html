@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seif Hermina - Interactive CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
@@ -22,9 +24,21 @@
   </header>
 
   <main class="container">
+
+        <section class="card">
+      <div class="section-header">
+        <h3><i class="fa-solid fa-quote-left"></i> Daily Inspiration</h3>
+      </div>
+      <div class="section-content" id="quote-container">
+        <p id="quote-text">Loading quote...</p>
+        <p id="quote-author"><strong></strong></p>
+        <button id="new-quote-btn" class="btn small-btn" style="margin-top: 10px;">Get New Quote</button>
+      </div>
+    </section>
+
     <section class="card">
       <div class="section-header">
-        <h3>Profile</h3>
+        <h3><i class="fa-solid fa-user"></i> Profile</h3>
       </div>
       <div class="section-content">
         <p>
@@ -39,7 +53,7 @@
 
     <section class="card">
       <div class="section-header">
-        <h3>Education</h3>
+        <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
       </div>
       <div class="section-content">
         <p><strong>Bachelor of Business Information Systems</strong></p>
@@ -58,7 +72,7 @@
 
     <section class="card">
       <div class="section-header">
-        <h3>Skills</h3>
+        <h3><i class="fa-solid fa-code"></i> Skills</h3>
         <button class="btn small-btn toggle-btn" data-target="skills-content">Hide Skills</button>
       </div>
 
@@ -118,7 +132,7 @@
 
     <section class="card">
       <div class="section-header">
-        <h3>Projects</h3>
+        <h3><i class="fa-solid fa-briefcase"></i> Projects</h3>
         <button class="btn small-btn toggle-btn" data-target="projects-content">Hide Projects</button>
       </div>
 
@@ -186,7 +200,7 @@
 
     <section class="card">
       <div class="section-header">
-        <h3>Achievements</h3>
+        <h3><i class="fa-solid fa-trophy"></i> Achievements</h3>
         <button class="btn small-btn toggle-btn" data-target="achievements-content">Hide Achievements</button>
       </div>
 
@@ -215,7 +229,7 @@
 
     <section class="card">
       <div class="section-header">
-        <h3>Contact Information</h3>
+        <h3><i class="fa-solid fa-envelope"></i> Contact Information</h3>
       </div>
       <div class="section-content">
         <p>Email: seif.adly@aucegypt.edu</p>
@@ -245,6 +259,30 @@
         </form>
       </div>
     </section>
+
+    <section class="card">
+      <div class="section-header">
+        <h3><i class="fa-solid fa-cloud-sun"></i> Current Weather</h3>
+      </div>
+      <div class="section-content">
+        <div class="inline-form">
+          <input type="text" id="city-input" placeholder="Enter a city (e.g., Cairo)" value="Cairo" />
+          <button id="get-weather-btn" class="btn">Check Weather</button>
+        </div>
+        
+        <div id="weather-container" style="margin-top: 15px;">
+          <p id="weather-status">Loading weather...</p>
+          <div id="weather-data" class="hidden" style="display: flex; align-items: center; gap: 10px;">
+            <img id="weather-icon" src="" alt="Weather Icon" />
+            <div>
+              <p style="margin: 0; font-size: 1.2rem;"><strong id="weather-temp"></strong></p>
+              <p style="margin: 0; text-transform: capitalize;" id="weather-condition"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">

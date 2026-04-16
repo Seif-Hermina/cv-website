@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+/* Add smooth scrolling to the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #f5f7fb;
   --text: #1f2937;
@@ -24,7 +29,8 @@ body.dark-mode {
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  /* Upgrade the font */
+  font-family: 'Poppins', sans-serif;
   background: var(--bg);
   color: var(--text);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -84,11 +90,21 @@ body {
 
 .card {
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
   box-shadow: var(--shadow);
-  margin-bottom: 18px;
-  overflow: hidden;
+  /* Add this transition line */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
 .section-header {
@@ -238,4 +254,60 @@ ul {
   .hero-text {
     text-align: center;
   }
+}
+
+/* Quote Widget */
+#quote-container {
+  background: rgba(37, 99, 235, 0.05);
+  border-left: 4px solid var(--accent);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  position: relative;
+}
+
+#quote-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+#quote-author {
+  text-align: right;
+  color: var(--accent);
+}
+
+/* Weather Widget */
+#weather-container {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(147, 197, 253, 0.2));
+  border-radius: 12px;
+  padding: 15px 20px;
+  border: 1px solid var(--border);
+  transition: background 0.3s ease;
+}
+
+body.dark-mode #weather-container {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(17, 24, 39, 0.5));
+}
+
+#weather-data {
+  background: var(--card);
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+#weather-temp {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+/* Add space between icon and text in headers */
+.section-header h3 i {
+  margin-right: 8px;
+  color: var(--accent);
 }
